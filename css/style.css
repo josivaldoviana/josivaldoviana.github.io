@@ -1,0 +1,412 @@
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Tipografia moderna */
+    line-height: 1.6;
+    color: #333;
+    background-color: #FFFFFF;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Paleta de Cores */
+:root {
+    --cor-principal: #D32F2F; /* Dourado */
+    --cor-secundaria: #800020; /* Vinho */
+    --cor-texto-claro: #333333;
+    --cor-texto-bom: #fafafa;
+    --cor-texto-escuro: #000000;
+    --cor-fundo-escuro: #FAFAFA; /* Preto mais suave */
+    --cor-fundo-claro: #f9f9f9;
+}
+
+/* Cabeçalho e Navbar */
+header {
+    background: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--cor-principal);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 25px;
+}
+
+.nav-link {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    color: var(--cor-principal);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+    display: none; /* Escondido por padrão, mostrado em mobile */
+    color: var(--cor-texto-claro);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Conteúdo Principal */
+main {
+    padding-top: 85px; /* Ajuste para altura da navbar */
+}
+
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+section:nth-child(even) {
+    background-color: var(--cor-fundo-claro);
+}
+
+.section-titulo {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+}
+
+.btn-principal {
+    background: var(--cor-principal);
+    color: var(--cor-texto-escuro);
+}
+
+.btn-principal:hover {
+    background: #C62828; /* Dourado mais escuro */
+    transform: translateY(-2px);
+}
+
+/* Seção Hero */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('../images/capa.JPG') no-repeat center top / cover;
+    color: var(--cor-texto-bom);
+    text-align: center;
+    padding: 15rem 0;
+    position: relative;
+    margin-top: 3vh;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--cor-principal);
+}
+
+.hero-section .slogan {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Seção Sobre Nós */
+.sobre-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sobre-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.sobre-texto h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+/* Seção Cardápio */
+.cardapio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.cardapio-item {
+    background: #e09f3e;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardapio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.cardapio-item img {
+    max-width: 100%;
+    height: 200px; /* Altura fixa para consistência */
+    object-fit: cover; /* Para cobrir a área sem distorcer */
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.cardapio-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--cor-secundaria);
+    font-size: 1.4rem;
+}
+
+.cardapio-item .preco {
+    font-weight: bold;
+    color: var(--cor-texto-escuro);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Seção Galeria */
+section#galeria{
+    background-color: #33691E;
+    .section-titulo{
+        color: var(--cor-texto-bom);
+    }
+}
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Seção Avaliações */
+.avaliacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.avaliacao-card {
+    background: var(--cor-texto-claro);
+    padding: 1.5rem;
+    border-left: 5px solid var(--cor-principal);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.avaliacao-card p {
+    font-style: italic;
+    color: var(--cor-fundo-claro);
+    margin-bottom: 1rem;
+}
+
+.avaliacao-card h4 {
+    text-align: right;
+    color: var(--cor-fundo-escuro);
+}
+
+/* Seção Contato */
+.contato-conteudo {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.contato-info, .contato-form {
+    flex: 1;
+    min-width: 300px; /* Para quebrar em telas menores */
+}
+
+.contato-info h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+.contato-info p {
+    margin-bottom: 0.8rem;
+}
+
+.contato-info i {
+    color: var(--cor-principal);
+    margin-right: 10px;
+    width: 20px; /* Alinhamento dos ícones */
+    text-align: center;
+}
+
+.contato-form input, .contato-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.contato-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contato-form button {
+    width: 100%;
+}
+
+/* Rodapé */
+footer {
+    background: #e09f3e;
+    color: var(--cor-texto-escuro);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 0; /* Removido margin-top, pois a última seção já tem padding */
+    border-top: 3px solid var(--cor-principal);
+}
+
+footer .social-links a {
+    color: var(--cor-texto-claro);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--cor-principal);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-section{
+        padding: 10rem 0;
+    }
+    .nav-menu {
+        display: none; /* Escondido por padrão */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--cor-fundo-escuro);
+        position: absolute;
+        top: 70px; /* Abaixo da navbar */
+        left: 0;
+        padding: 1rem 0;
+    }
+    .cardapio-item{
+        width: 75vw;
+        margin: 0 auto;
+    }
+    .nav-menu.active {
+        display: flex; /* Mostra quando ativo */
+    }
+
+    .nav-item {
+        margin: 0;
+        width: 100%;    
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.8rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-link:hover {
+        background-color: var(--cor-principal);
+        color: var(--cor-texto-escuro);
+    }
+
+    .menu-icon {
+        display: block; /* Mostra o ícone do menu */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section .slogan {
+        font-size: 1.2rem;
+    }
+
+    .sobre-conteudo {
+        flex-direction: column;
+    }
+
+    .contato-conteudo {
+        flex-direction: column;
+    }
+}
+
+/* Font Awesome Icons (se não estiver usando CDN no HTML) */
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'); */
+/* A CDN já está no HTML, então esta linha não é estritamente necessária aqui, mas é bom lembrar */
+
